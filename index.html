@@ -8,6 +8,215 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cover-bg {
+    background-image: url(Images/cover-bg-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'lato', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    color: #777;
+}
+
+span, a {
+    display: inline-block;
+}
+
+.banner {
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(Images/cover-bg-img.jpg);
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+}
+
+.banner .caption h4 {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.banner .caption h2 {
+    color: white;
+    font-size: 70px;
+    letter-spacing: -1px;
+}
+
+.banner .caption p {
+    font-size: 17px;
+    color: white;
+    opacity: 0.7;
+}
+
+/*Social links*/
+.banner .caption .social-icon a {
+    color: white;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-size: 16px;
+    background-color: rgba(0,0,0,0.3);
+    transition: 0.5s all;
+} 
+
+.banner .caption .social-icon a:hover {
+    background-color: rgba(0,0,0,0.6);
+}
+
+/*Hover effect for dropdown menu*/
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu {  
+        display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  
+    }
+	.navbar .nav-item:hover .nav-link { 
+        color: #fff;  
+    }
+	.navbar .dropdown-menu.fade-down { 
+        top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; 
+    }
+	.navbar .dropdown-menu.fade-up { 
+        top:180%;  
+    }
+	.navbar .nav-item:hover .dropdown-menu { 
+        transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); 
+    }
+}
+
+.scroll-down {
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	display: block;
+	text-align: center;
+	font-size: 20px;
+	z-index: 100;
+	text-decoration: none;
+	text-shadow: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    z-index: 9;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%) rotate(45deg);
+    -moz-transform: translate(-50%, 0%) rotate(45deg);
+    transform: translate(-50%, 0%) rotate(45deg);
+	-webkit-animation: fade_move_down 4s ease-in-out infinite;
+	-moz-animation:    fade_move_down 4s ease-in-out infinite;
+	animation:         fade_move_down 4s ease-in-out infinite;
+}
+
+.footer {
+    
+    height: 68px;
+    background-color:rgb(19, 19, 56);
+    color: white;
+    position: relative;
+  }
+  .social-media{
+    font-size: 35px;
+    color: #777;
+    background: #ede3f7;
+    display:flex;
+    justify-content: center;
+    
+}
+
+a1{ /*outside button*/
+    display: flex;
+    height: 50px;
+    width: 50px;
+    margin: 0 10px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15), -6px -6px 10px -1px rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0.01);
+    transition: 0.1s all;
+}
+
+a1 i1{
+  transition: 0.1s all;
+}
+
+a1:hover i1{/*inside icons move*/
+    transform: scale(0.80);
+}
+a1:hover .fa-facebook{
+    color: blue;
+}
+a1:hover .fa-whatsapp{
+    color: green;
+}
+a1:hover .fa-instagram{
+    color:crimson
+}
+a1:hover .fa-twitter{
+    color: skyblue
+}
+a1:hover .fa-linkedin{
+    color: blue
+}
+
+
+/*animated scroll arrow animation*/
+@-webkit-keyframes fade_move_down {
+  0%   { -webkit-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { -webkit-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+}
+@-moz-keyframes fade_move_down {
+  0%   { -moz-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { -moz-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+}
+@keyframes fade_move_down {
+  0%   { transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { transform:translate(0,10px) rotate(45deg); opacity: 0; }
+}
+
+.how-we-work {
+    margin-top: 30px;
+    align-items: center;
+}
+
+.how-we-work .container .row .section_title h3 {
+    font-size: 40px;
+    letter-spacing: -1px;
+}
+
+.how-we-work .container .row .section_title p {
+    font-size: 17px;
+}
+
+
+</style>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -54,12 +263,12 @@
                     <h4 class="mt-20 mb-20">Interior Designing</h4>
                     <h2 class="mt-20">INTERIOR DESIGN</h2>
                     <p class="mt-20">The best Interior Designers on the planet!!</p>
-                    <div class="social-icon text-center mt-20">
+                  <!--  <div class="social-icon text-center mt-20">
                         <a href="#"><span><i class="fa fa-facebook"></i></span></a>
                         <a href="#"><span><i class="fa fa-twitter"></i></span></a>
                         <a href="#"><span><i class="fa fa-instagram"></i></span></a>
                         <a href="#"><span><i class="fa fa-linkedin"></i></span></a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -126,8 +335,21 @@
       </div>
     </section>
 
-
-
+    <div class="footer">
+      <center>
+      <br>
+      <p style="color:white";><b>Follow Us</b></p>
+      <br>
+    </center>
+    </div>
+    <div class="social-media">     
+        <a1 href="https://www.facebook.com/"><i1 class="fab fa-facebook"></i1></a1>
+        <a1 href="https://www.whatsapp.com/"><i1 class="fab fa-whatsapp"></i1></a1>
+        <a1 href="https://www.instagram.com/?hl=en"><i1 class="fab fa-instagram"></i1></a1>
+        <a1 href="https://twitter.com/?lang=en"><i1 class="fab fa-twitter"></i1></a1>
+        <a1 href="https://www.linkedin.com/"><i1 class="fab fa-linkedin"></i1></a1>
+        
+      </div>
 
 
 <!-- JS, Popper.js, and jQuery -->
